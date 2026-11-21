@@ -21,7 +21,7 @@ Series elegidas:
 
 3. **Series sin histórico suficiente:** De las 138 series de pernoctaciones de no residentes, solo 97 son «Nacional.» y tienen datos desde 2005. Las otras 41 son puntos añadidos en 2024. Decisión: usar solo las «Nacional.». Al buscar «Palma» salió también Las Palmas de Gran Canaria; la descartamos y usamos solo Palma de Mallorca.
 
-4. **Cierre por COVID.** En los cinco destinos abril de 2020 vale 0 y mayo y junio de 2020 están vacíos. Con un 0 no se puede usar log ni Box-Cox. Decisión: tratar estos meses como una intervención, no como datos normales. Cómo lo haremos exactamente lo decidimos al modelar.
+4. **Cierre por COVID.** En los cinco destinos abril de 2020 vale 0 y mayo y junio de 2020 están vacíos. Con un 0 no se puede usar log ni Box-Cox. Decisión: tratar abril, mayo y junio de 2020 como huecos e interpolarlos linealmente (junto con febrero de 2021 en Benidorm) para mantener continuidad mensual y valores positivos, guardando una columna booleana `imputado` para modelarlos como intervención en E2.
 
 5. **Mes que falta en Marbella.** En Marbella no existe la fila de mayo de 2020 (en los otros destinos existe, pero vacía). Ya tenemos el calendario completo de 261 meses para los cinco destinos.
 
